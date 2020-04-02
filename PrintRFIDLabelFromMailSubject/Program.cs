@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using System;
 
 namespace PrintRFIDLabelFromMailSubject
 {
@@ -6,6 +7,7 @@ namespace PrintRFIDLabelFromMailSubject
     {
         static void Main(string[] args)
         {
+           private readonly IConfiguration configuration;
             
         }
     }
