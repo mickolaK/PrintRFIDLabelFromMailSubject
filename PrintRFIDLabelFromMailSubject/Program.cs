@@ -8,8 +8,7 @@ namespace PrintRFIDLabelFromMailSubject
     {
         static void Main(string[] args)
         {
-            var configuration = new ConfigurationBuilder();
-            configuration.AddJsonFile("appconfig.json");
+               
         }
     }
 }
