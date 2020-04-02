@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration.Json;
 using System;
 
 namespace PrintRFIDLabelFromMailSubject
@@ -7,8 +8,8 @@ namespace PrintRFIDLabelFromMailSubject
     {
         static void Main(string[] args)
         {
-           private readonly IConfiguration configuration;
-            
+            var configuration = new ConfigurationBuilder();
+            configuration.AddJsonFile("appconfig.json");
         }
     }
 }
