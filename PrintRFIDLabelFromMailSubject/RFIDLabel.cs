@@ -8,16 +8,18 @@ namespace PrintRFIDLabelFromMailSubject
 {
     class RFIDLabel
     {
-        public RFIDLabel()
+        public string PrinterIP { get; }
+        public int PrinterPort { get; }
+        public RFIDLabel(string printerIP, string printerport)
         {
-
+            PrinterIP = printerIP;
+            PrinterPort = Int32.Parse(printerport);
         }
-
-        public bool SendRFIDLabelToPrinter(List<string> RFIDString, string printerIP, string printerport)
+        public bool SendRFIDLabelToPrinter(List<string> RFIDString)
         {
             try
             {
-                var client = new TcpClient(printerIP, Int32.Parse(printerport));
+                var client = new TcpClient(PrinterIP, PrinterPort);
                 StreamWriter writer = new System.IO.StreamWriter(client.GetStream());
                 foreach (var item in RFIDString)
                 {
