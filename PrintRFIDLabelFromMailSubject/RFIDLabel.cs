@@ -13,7 +13,7 @@ namespace PrintRFIDLabelFromMailSubject
 
         }
 
-        public void SendRFIDLabelToPrinter(List<string> RFIDString, string printerIP, string printerport)
+        public bool SendRFIDLabelToPrinter(List<string> RFIDString, string printerIP, string printerport)
         {
             try
             {
@@ -29,15 +29,12 @@ namespace PrintRFIDLabelFromMailSubject
                 writer.Flush();
                 writer.Close();
                 client.Close();
+                return true;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-            }
-            finally
-            {
-                Console.WriteLine("Press any key to continue");
-                Console.ReadKey();
+                return false;
             }
         }
     }

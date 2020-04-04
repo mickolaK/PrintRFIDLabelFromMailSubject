@@ -17,7 +17,8 @@ namespace PrintRFIDLabelFromMailSubject
                 .GetSubjectFromMail(configuration["MailHost"], configuration["MailUsername"], configuration["MailPassword"], configuration["MailPort"], configuration["MailEnableSSL"]);
 
 
-            var client = new TcpClient(Configuration["PrinterIP"], Int32.Parse(Configuration["PrinterPort"]));
+            var label = new RFIDLabel()
+                .SendRFIDLabelToPrinter(RFIDString, configuration["PrinterIP"], configuration["PrinterPort"]);
 
         
         }
