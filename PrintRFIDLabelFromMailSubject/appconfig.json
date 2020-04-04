@@ -1,13 +1,9 @@
 {
-  "Mail": {
-    "Host": "pop.mail.ru",
-    "Username": "testrfid@mail.ru",
-    "Password": "best4metoo",
-    "Port": "995",
-    "EnableSSl": "true"
-  },
-  "Printer": {
-    "Port": "9100",
-    "IP": "172.18.8.150"
-  }
+  "MailHost": "pop.mail.ru",
+  "MailUsername": "testrfid@mail.ru",
+  "MailPassword": "best4metoo",
+  "MailPort": "995",
+  "MailEnableSSl": "true",
+  "PrinterPort": "9100",
+  "PrinterIP": "172.18.8.150"
 }
