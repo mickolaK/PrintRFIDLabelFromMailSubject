@@ -13,9 +13,10 @@ namespace PrintRFIDLabelFromMailSubject
                 .AddJsonFile("appconfig.json")
                 .Build();
 
-            SubjectFromMail(configuration["MailHost"], configuration["MailUsername"], configuration["MailPassword"], configuration["MailPort"], configuration["MailEnableSSL"]);
-            
-            
+            var RFIDString = new SubjectFromMail()
+                .GetSubjectFromMail(configuration["MailHost"], configuration["MailUsername"], configuration["MailPassword"], configuration["MailPort"], configuration["MailEnableSSL"]);
+
+
             var client = new TcpClient(Configuration["PrinterIP"], Int32.Parse(Configuration["PrinterPort"]));
 
         
