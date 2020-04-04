@@ -10,10 +10,10 @@ namespace PrintRFIDLabelFromMailSubject
     {
         public string PrinterIP { get; }
         public int PrinterPort { get; }
-        public RFIDLabel(string printerIP, string printerport)
+        public RFIDLabel(string printerIP, int printerport)
         {
             PrinterIP = printerIP;
-            PrinterPort = Int32.Parse(printerport);
+            PrinterPort = printerport;
         }
         public bool SendRFIDLabelToPrinter(List<string> RFIDString)
         {
