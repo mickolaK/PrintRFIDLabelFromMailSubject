@@ -6,6 +6,10 @@ using System.Text;
 
 namespace PrintRFIDLabelFromMailSubject
 {
+    /// <summary>
+    /// Класс для работы с RFID-этикеткой
+    /// </summary>
+    
     class RFIDLabel
     {
         public string PrinterIP { get; }
@@ -15,6 +19,8 @@ namespace PrintRFIDLabelFromMailSubject
             PrinterIP = printerIP;
             PrinterPort = printerport;
         }
+        ///<summary>Метод для печати RFID-этикетки</summary>
+        ///<param name="RFIDString">Строки для печати</param>
         public bool SendRFIDLabelToPrinter(List<string> RFIDString)
         {
             try
