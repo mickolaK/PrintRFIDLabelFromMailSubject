@@ -11,14 +11,13 @@ namespace PrintRFIDLabelFromMailSubject
             var configuration = new ConfigurationBuilder()
                 .AddJsonFile("appconfig.json",optional:false,reloadOnChange:true)
                 .Build();
-            var label = new RFIDLabel(configuration["PrinterIP"], configuration["PrinterPort"])
-                .SendRFIDLabelToPrinter(RFIDString);
-            var printerport = configuration.
-            var mailport =configuration["MailPort"];
-            var RFIDString = new SubjectFromMail(configuration["MailHost"], configuration["MailUsername"], configuration["MailPassword"], configuration["MailPort"], configuration["MailEnableSSL"])
+            var mailenablessl = configuration.GetValue<bool>("MailEnableSSl"); 
+            var mailport = configuration.GetValue<int>("MailPort");
+            var RFIDString = new SubjectFromMail(configuration["MailHost"], configuration["MailUsername"], configuration["MailPassword"], mailport, mailenablessl)
                 .GetSubjectFromMail();
-            
-            
+            var printerport = configuration.GetValue<int>("PrinterPort");
+            var label = new RFIDLabel(configuration["PrinterIP"], printerport)
+                .SendRFIDLabelToPrinter(RFIDString);
         }
     }
 }
