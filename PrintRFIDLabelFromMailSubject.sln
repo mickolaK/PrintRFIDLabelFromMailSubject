@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.29418.71
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrintRFIDLabelFromMailSubject", "PrintRFIDLabelFromMailSubject\PrintRFIDLabelFromMailSubject.csproj", "{F2CAEC62-8F78-431A-B0C0-07FFDD0395AF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp2", "ConsoleApp2\ConsoleApp2.csproj", "{D590D984-8222-42C5-84AF-9E03D708C9E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp2.Tests", "ConsoleApp2.Tests\ConsoleApp2.Tests.csproj", "{FCFF3A05-5BE9-43EA-A12D-3C49C9604CF5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{F2CAEC62-8F78-431A-B0C0-07FFDD0395AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2CAEC62-8F78-431A-B0C0-07FFDD0395AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2CAEC62-8F78-431A-B0C0-07FFDD0395AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D590D984-8222-42C5-84AF-9E03D708C9E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D590D984-8222-42C5-84AF-9E03D708C9E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D590D984-8222-42C5-84AF-9E03D708C9E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D590D984-8222-42C5-84AF-9E03D708C9E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCFF3A05-5BE9-43EA-A12D-3C49C9604CF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCFF3A05-5BE9-43EA-A12D-3C49C9604CF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCFF3A05-5BE9-43EA-A12D-3C49C9604CF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCFF3A05-5BE9-43EA-A12D-3C49C9604CF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
