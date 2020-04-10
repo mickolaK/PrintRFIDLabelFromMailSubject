@@ -15,9 +15,9 @@ namespace ConsoleApp2
             var subjects = subjectprovider.GetSubjects();
             printService.Print(subjects);
         }
-        public MainWorker(ISubjectsProvider subjectprovider, IPrintService printService)
+        public MainWorker(ISubjectsProvider subjectProvider, IPrintService printService)
         {
-            this.subjectprovider = subjectprovider;
+            this.subjectprovider = subjectProvider;
             this.printService = printService;
         }
     }
@@ -43,11 +43,13 @@ namespace ConsoleApp2
         public string Title { get; }
     }
 
-    public class EmailSubjctProvider : ISubjectsProvider
+    public class EmailSubjectProvider : ISubjectsProvider
     {
         public PrintableDto[] GetSubjects()
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"GetSubjects");
+            return new PrintableDto[] { new PrintableDto("String#1"), new PrintableDto("String#2") };
+            //throw new NotImplementedException();
         }
     }
 
@@ -55,7 +57,12 @@ namespace ConsoleApp2
     {
         public void Print(PrintableDto[] strings)
         {
-            throw new NotImplementedException();
+            foreach (var VARIABLE in strings)
+            {
+                Console.WriteLine($"{VARIABLE.Title}");
+            }
+
+            //throw new NotImplementedException();
         }
     }
 

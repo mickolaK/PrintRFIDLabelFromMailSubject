@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.Extensions.Configuration;
+using PrintRFIDLabelFromMailSubject;
 using Spire.Email;
 using Spire.Email.Pop3;
 
@@ -11,13 +13,13 @@ public class SubjectFromMail
     public int MailPort { get; }
     public bool MailEnableSSL { get; }
 
-    public SubjectFromMail(string mailhost, string mailusername, string mailpassword, int mailport, bool mailenableSSL)
+    public SubjectFromMail(IConfig cfg)
     {
-        MailHost = mailhost;
-        MailUsername = mailusername;
-        MailPassword = mailpassword;
-        MailPort = mailport;
-        MailEnableSSL = mailenableSSL;
+        this.MailHost = cfg.GetConfig()["MailHost"];
+        this.MailUsername = cfg.GetConfig()["MailUsername"];
+        this.MailPassword = cfg.GetConfig()["MailPassword"];
+        this.MailPort = cfg.GetConfig().GetValue<int>("MailPort");
+        this.MailEnableSSL = cfg.GetConfig().GetValue<bool>("MailEnableSSL");
     }
     public List<string> GetSubjectFromMail()
     {

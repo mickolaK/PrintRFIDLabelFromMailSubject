@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net.Sockets;
 using System.Text;
+using Microsoft.Extensions.Configuration;
 
 namespace PrintRFIDLabelFromMailSubject
 {
@@ -14,10 +15,10 @@ namespace PrintRFIDLabelFromMailSubject
     {
         public string PrinterIP { get; }
         public int PrinterPort { get; }
-        public RFIDLabel(string printerIP, int printerport)
+        public RFIDLabel(IConfig cfg)
         {
-            PrinterIP = printerIP;
-            PrinterPort = printerport;
+            this.PrinterIP = cfg.GetConfig().GetValue<string>("PrinterIP");
+            this.PrinterPort = cfg.GetConfig().GetValue<int>("PrinterPort");
         }
         ///<summary>Метод для печати RFID-этикетки</summary>
         ///<param name="RFIDString">Строки для печати</param>

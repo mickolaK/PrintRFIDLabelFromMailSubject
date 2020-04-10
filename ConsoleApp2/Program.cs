@@ -6,7 +6,9 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-
+            var test = new MainWorker(new EmailSubjectProvider(), new ConsolePrintService());
+            test.DoWork();
+            Console.ReadKey();
         }
     }
 }

@@ -12,7 +12,7 @@ namespace ConsoleApp2.Tests
         [Test]
         public void Test1()
         {
-            var app = new MainWorker(new EmailSubjctProvider(), new ConsolePrintService() );
+            var app = new MainWorker(new EmailSubjectProvider(), new ConsolePrintService() );
             app.DoWork();
         }
     }

@@ -8,16 +8,12 @@ namespace PrintRFIDLabelFromMailSubject
     {
         static void Main(string[] args)
         {
-            var configuration = new ConfigurationBuilder()
-                .AddJsonFile("appconfig.json",optional:false,reloadOnChange:true)
-                .Build();
-            var mailenablessl = configuration.GetValue<bool>("MailEnableSSl"); 
-            var mailport = configuration.GetValue<int>("MailPort");
-            var RFIDString = new SubjectFromMail(configuration["MailHost"], configuration["MailUsername"], configuration["MailPassword"], mailport, mailenablessl)
+            
+            var config = new GetConfigFromJson();
+            var rfidString = new SubjectFromMail(config)
                 .GetSubjectFromMail();
-            var printerport = configuration.GetValue<int>("PrinterPort");
-            var label = new RFIDLabel(configuration["PrinterIP"], printerport)
-                .SendRFIDLabelToPrinter(RFIDString);
+            var label = new RFIDLabel(config)
+                .SendRFIDLabelToPrinter(rfidString);
         }
     }
 }
