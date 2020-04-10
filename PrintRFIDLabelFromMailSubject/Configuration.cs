@@ -10,7 +10,7 @@ namespace PrintRFIDLabelFromMailSubject
         public IConfiguration GetConfig();
     }
 
-    class GetConfigFromJson:IConfig
+    public class GetConfigFromJson:IConfig
     {
         public IConfiguration GetConfig()
         {
@@ -21,7 +21,7 @@ namespace PrintRFIDLabelFromMailSubject
         }
     }
 
-    class GetConfigFromEnvironment:IConfig
+    public class GetConfigFromEnvironment:IConfig
     {
         public IConfiguration GetConfig()
         {
@@ -29,6 +29,15 @@ namespace PrintRFIDLabelFromMailSubject
                 .AddEnvironmentVariables()
                 .Build();
             return configuration;
+        }
+    }
+
+    public class GetConfigFromDatabase : IConfig
+    {
+        public IConfiguration GetConfig()
+        {
+            // read from DB here
+            // return configuration;
         }
     }
 }
