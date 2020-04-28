@@ -10,7 +10,11 @@ namespace PrintRFIDLabelFromMailSubject
         public IConfiguration GetConfig()
         {
             // read from DB here
-            // return configuration;
+            Console.WriteLine("Inside GetConfigFromDatabase");
+            var configuration = new ConfigurationBuilder()
+                .AddJsonFile("appconfig.json", optional: false, reloadOnChange: true)
+                .Build();
+            return configuration;
         }
     }
 }
