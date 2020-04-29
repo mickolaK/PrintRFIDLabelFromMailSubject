@@ -15,7 +15,6 @@ namespace PrintRFIDLabelFromMailSubject
             builder.RegisterType<SubjectFromMail>();
             builder.RegisterType<RFIDLabel>();
             var container = builder.Build();
-            var config = container.Resolve<IConfig>();
             var rfidString = container.Resolve<SubjectFromMail>().GetSubjectFromMail();
             var label = container.Resolve<RFIDLabel>().SendRFIDLabelToPrinter(rfidString);
         }
